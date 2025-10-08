@@ -15,8 +15,7 @@ const HeroSection = () => {
             Online Word Counter – Free Tool
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Instantly count words, characters, sentences, and reading time. Perfect for writers, students, and content
-            creators.
+            Instantly count words, characters, sentences, and reading time with our free online word counter. Perfect for writers, students, and content creators wondering "how many words is this?"
           </p>
           <Button onClick={scrollToTool} size="lg" className="mt-8 shadow-lg hover:shadow-xl transition-shadow">
             Start Typing Now

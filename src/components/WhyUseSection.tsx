@@ -35,9 +35,9 @@ const WhyUseSection = () => {
   return (
     <section className="w-full py-16 bg-accent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-foreground">
-          Why Use Online Word Counter
-        </h2>
+      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-foreground">
+        Why Use This Word Count Checker
+      </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => (
             <div key={index} className="bg-card border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">

@@ -57,6 +57,7 @@ export default {
           green: "hsl(var(--metric-green))",
           blue: "hsl(var(--metric-blue))",
           gray: "hsl(var(--metric-gray))",
+          pink: "hsl(var(--metric-pink))",
         },
       },
       fontFamily: {

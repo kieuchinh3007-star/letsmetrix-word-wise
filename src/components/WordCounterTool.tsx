@@ -6,6 +6,7 @@ interface Metrics {
   words: number;
   characters: number;
   sentences: number;
+  paragraphs: number;
   readingTime: number;
   speakingTime: number;
 }
@@ -15,7 +16,7 @@ const WordCounterTool = () => {
 
   const metrics: Metrics = useMemo(() => {
     if (!text.trim()) {
-      return { words: 0, characters: 0, sentences: 0, readingTime: 0, speakingTime: 0 };
+      return { words: 0, characters: 0, sentences: 0, paragraphs: 0, readingTime: 0, speakingTime: 0 };
     }
 
     // Word count - split by whitespace and filter empty strings
@@ -27,13 +28,16 @@ const WordCounterTool = () => {
     // Sentence count - split by periods, exclamation marks, question marks
     const sentences = text.split(/[.!?]+/).filter((sentence) => sentence.trim().length > 0).length;
 
+    // Paragraph count - split by double line breaks
+    const paragraphs = text.split(/\n\s*\n/).filter((para) => para.trim().length > 0).length;
+
     // Reading time (average 200 words per minute)
     const readingTime = Math.ceil(words / 200);
 
     // Speaking time (average 130 words per minute)
     const speakingTime = Math.ceil(words / 130);
 
-    return { words, characters, sentences, readingTime, speakingTime };
+    return { words, characters, sentences, paragraphs, readingTime, speakingTime };
   }, [text]);
 
   const handleClear = () => {
@@ -91,6 +95,16 @@ const WordCounterTool = () => {
               <div>
                 <div className="text-3xl font-bold text-metric-gray">{metrics.sentences}</div>
                 <div className="text-sm text-muted-foreground">Sentences</div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-lg bg-metric-pink/10 flex items-center justify-center">
+                <FileText className="w-6 h-6 text-metric-pink" />
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-metric-pink">{metrics.paragraphs}</div>
+                <div className="text-sm text-muted-foreground">Paragraphs</div>
               </div>
             </div>
 
