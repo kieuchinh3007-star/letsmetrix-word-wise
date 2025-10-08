@@ -1,13 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import HeroSection from "@/components/HeroSection";
+import WordCounterTool from "@/components/WordCounterTool";
+import HowToUseSection from "@/components/HowToUseSection";
+import WhyUseSection from "@/components/WhyUseSection";
+import FAQSection from "@/components/FAQSection";
+import RelatedToolsSection from "@/components/RelatedToolsSection";
+import AppsSection from "@/components/AppsSection";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="min-h-screen">
+      <HeroSection />
+      
+      {/* Word Counter Tool Section */}
+      <section id="word-counter-tool" className="w-full py-16 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <WordCounterTool />
+        </div>
+      </section>
+
+      <HowToUseSection />
+      <WhyUseSection />
+      <FAQSection />
+      <RelatedToolsSection />
+      <AppsSection />
+    </main>
   );
 };
 
