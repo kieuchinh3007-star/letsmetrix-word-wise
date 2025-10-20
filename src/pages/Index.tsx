@@ -5,6 +5,7 @@ import WhyUseSection from "@/components/WhyUseSection";
 import FAQSection from "@/components/FAQSection";
 import RelatedToolsSection from "@/components/RelatedToolsSection";
 import AppsSection from "@/components/AppsSection";
+import LetsmetrixSection from "@/components/LetsmetrixSection";
 
 const Index = () => {
   return (
@@ -23,6 +24,7 @@ const Index = () => {
       <FAQSection />
       <RelatedToolsSection />
       <AppsSection />
+      <LetsmetrixSection />
     </main>
   );
 };
